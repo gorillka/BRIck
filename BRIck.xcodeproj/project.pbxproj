@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23288DB82110DF3700D091F6 /* BRIck.h in Headers */ = {isa = PBXBuildFile; fileRef = 23288DB62110DF3700D091F6 /* BRIck.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23288DC32110E1BD00D091F6 /* Dependency.swift */; };
+		23288DC62110E22400D091F6 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23288DC52110E22400D091F6 /* Component.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		23288DB62110DF3700D091F6 /* BRIck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRIck.h; sourceTree = "<group>"; };
 		23288DB72110DF3700D091F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23288DC32110E1BD00D091F6 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		23288DC52110E22400D091F6 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				23288DC32110E1BD00D091F6 /* Dependency.swift */,
+				23288DC52110E22400D091F6 /* Component.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */,
+				23288DC62110E22400D091F6 /* Component.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
