@@ -17,6 +17,7 @@
 		237D72A62111EE6B007B68CF /* ViewableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72A52111EE6B007B68CF /* ViewableRouter.swift */; };
 		237D72AA2111EED4007B68CF /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72A92111EED4007B68CF /* LaunchRouter.swift */; };
 		237D72AC2111F0CC007B68CF /* ViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72AB2111F0CC007B68CF /* ViewControllable.swift */; };
+		237D72AE2111F3EA007B68CF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72AD2111F3EA007B68CF /* Presenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		237D72A52111EE6B007B68CF /* ViewableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableRouter.swift; sourceTree = "<group>"; };
 		237D72A92111EED4007B68CF /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
 		237D72AB2111F0CC007B68CF /* ViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllable.swift; sourceTree = "<group>"; };
+		237D72AD2111F3EA007B68CF /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				23249BC62111BA0100A5A3EA /* Interactor.swift */,
 				237D72A52111EE6B007B68CF /* ViewableRouter.swift */,
 				237D72A92111EED4007B68CF /* LaunchRouter.swift */,
+				237D72AD2111F3EA007B68CF /* Presenter.swift */,
 				237D72AB2111F0CC007B68CF /* ViewControllable.swift */,
 				23288DC22110E19200D091F6 /* DI */,
 				23249BC82111BE6F00A5A3EA /* Extension */,
@@ -208,6 +211,7 @@
 				237D72AA2111EED4007B68CF /* LaunchRouter.swift in Sources */,
 				23249BCA2111BE8D00A5A3EA /* Array+.swift in Sources */,
 				237D72A62111EE6B007B68CF /* ViewableRouter.swift in Sources */,
+				237D72AE2111F3EA007B68CF /* Presenter.swift in Sources */,
 				23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */,
 				23249BC72111BA0100A5A3EA /* Interactor.swift in Sources */,
 				23288DC62110E22400D091F6 /* Component.swift in Sources */,
