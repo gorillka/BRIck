@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23249BC72111BA0100A5A3EA /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249BC62111BA0100A5A3EA /* Interactor.swift */; };
+		23249BCA2111BE8D00A5A3EA /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23249BC92111BE8D00A5A3EA /* Array+.swift */; };
 		23288DB82110DF3700D091F6 /* BRIck.h in Headers */ = {isa = PBXBuildFile; fileRef = 23288DB62110DF3700D091F6 /* BRIck.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23288DC32110E1BD00D091F6 /* Dependency.swift */; };
 		23288DC62110E22400D091F6 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23288DC52110E22400D091F6 /* Component.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		23249BC62111BA0100A5A3EA /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		23249BC92111BE8D00A5A3EA /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		23288DB32110DF3700D091F6 /* BRIck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BRIck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23288DB62110DF3700D091F6 /* BRIck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRIck.h; sourceTree = "<group>"; };
 		23288DB72110DF3700D091F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23249BC82111BE6F00A5A3EA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				23249BC92111BE8D00A5A3EA /* Array+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		23288DA92110DF3700D091F6 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 				23288DC92110E46100D091F6 /* Router.swift */,
 				23249BC62111BA0100A5A3EA /* Interactor.swift */,
 				23288DC22110E19200D091F6 /* DI */,
+				23249BC82111BE6F00A5A3EA /* Extension */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -185,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23288DCA2110E46100D091F6 /* Router.swift in Sources */,
+				23249BCA2111BE8D00A5A3EA /* Array+.swift in Sources */,
 				23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */,
 				23249BC72111BA0100A5A3EA /* Interactor.swift in Sources */,
 				23288DC62110E22400D091F6 /* Component.swift in Sources */,
