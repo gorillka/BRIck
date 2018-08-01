@@ -14,6 +14,7 @@
 		23288DC62110E22400D091F6 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23288DC52110E22400D091F6 /* Component.swift */; };
 		23288DC82110E3D400D091F6 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23288DC72110E3D400D091F6 /* Builder.swift */; };
 		23288DCA2110E46100D091F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23288DC92110E46100D091F6 /* Router.swift */; };
+		237D72A62111EE6B007B68CF /* ViewableRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72A52111EE6B007B68CF /* ViewableRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		23288DC52110E22400D091F6 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		23288DC72110E3D400D091F6 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		23288DC92110E46100D091F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		237D72A52111EE6B007B68CF /* ViewableRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				23288DC72110E3D400D091F6 /* Builder.swift */,
 				23288DC92110E46100D091F6 /* Router.swift */,
 				23249BC62111BA0100A5A3EA /* Interactor.swift */,
+				237D72A52111EE6B007B68CF /* ViewableRouter.swift */,
 				23288DC22110E19200D091F6 /* DI */,
 				23249BC82111BE6F00A5A3EA /* Extension */,
 			);
@@ -197,6 +200,7 @@
 			files = (
 				23288DCA2110E46100D091F6 /* Router.swift in Sources */,
 				23249BCA2111BE8D00A5A3EA /* Array+.swift in Sources */,
+				237D72A62111EE6B007B68CF /* ViewableRouter.swift in Sources */,
 				23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */,
 				23249BC72111BA0100A5A3EA /* Interactor.swift in Sources */,
 				23288DC62110E22400D091F6 /* Component.swift in Sources */,
