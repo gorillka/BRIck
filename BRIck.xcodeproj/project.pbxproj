@@ -127,7 +127,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23288DBB2110DF3700D091F6 /* Build configuration list for PBXNativeTarget "BRIck" */;
 			buildPhases = (
-				23288DBE2110E07400D091F6 /* SwiftFormat */,
 				23288DAE2110DF3700D091F6 /* Headers */,
 				23288DAF2110DF3700D091F6 /* Sources */,
 				23288DB02110DF3700D091F6 /* Frameworks */,
@@ -183,27 +182,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		23288DBE2110E07400D091F6 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\nswiftformat .\nelse\necho \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23288DAF2110DF3700D091F6 /* Sources */ = {
