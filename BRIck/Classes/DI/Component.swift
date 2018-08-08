@@ -14,7 +14,7 @@ open class Component<DependencyType>: Dependency {
     private var sharedInstances: [String: Any] = [:]
     private let lock: NSRecursiveLock = NSRecursiveLock()
 
-    init(dependency: DependencyType) {
+    public init(dependency: DependencyType) {
         self.dependency = dependency
     }
 
