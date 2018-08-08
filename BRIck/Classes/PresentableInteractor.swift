@@ -7,3 +7,11 @@
 //
 
 import UIKit
+
+open class PresentableInteractor<PresenterType: Presentable>: Interactor {
+    public private(set) weak var presenter: PresenterType?
+
+    init(presenter: PresenterType) {
+        self.presenter = presenter
+    }
+}
