@@ -8,8 +8,8 @@
 
 import UIKit
 
-open class PresentableInteractor<PresenterType: Presentable>: Interactor {
-    public private(set) weak var presenter: PresenterType?
+open class PresentableInteractor<PresenterType>: Interactor {
+    let presenter: PresenterType
 
     public init(presenter: PresenterType) {
         self.presenter = presenter
