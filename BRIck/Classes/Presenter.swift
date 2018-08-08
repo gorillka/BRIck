@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+public protocol Presentable: class {}
+
+open class Presenter<ViewControllerType: AnyObject>: Presentable {
+    let viewController: ViewControllerType
+
+    public required init(viewController: ViewControllerType) {
+        self.viewController = viewController
+    }
+}
