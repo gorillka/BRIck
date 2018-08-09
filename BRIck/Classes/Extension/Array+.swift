@@ -8,12 +8,16 @@
 
 import Foundation
 
+/// Array extensions.
 public extension Array {
-    mutating func removeByReference(_ element: Element) {
-        guard let index = index(where: { $0 as AnyObject === element as AnyObject }) else {
+
+    /// Remove the given element from this array, by comparing pointer references.
+    ///
+    /// - parameter element: The element to remove.
+    mutating func removeElementByReference(_ element: Element) {
+        guard let objIndex = index(where: { $0 as AnyObject === element as AnyObject }) else {
             return
         }
-
-        remove(at: index)
+        remove(at: objIndex)
     }
 }

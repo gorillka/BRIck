@@ -8,10 +8,12 @@
 
 import UIKit
 
+/// Basic interface between a `Router` and the UIKit `UIViewController`.
 public protocol ViewControllable: class {
     var uiViewController: UIViewController { get }
 }
 
+/// Default implementation on `UIViewController` to conform to `ViewControllable` protocol.
 public extension ViewControllable where Self: UIViewController {
     var uiViewController: UIViewController {
         return self
