@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Array {
+public extension Array {
     mutating func removeByReference(_ element: Element) {
         guard let index = index(where: { $0 as AnyObject === element as AnyObject }) else {
             return
