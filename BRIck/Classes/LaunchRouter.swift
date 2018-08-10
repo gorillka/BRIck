@@ -20,7 +20,7 @@ public protocol LaunchRouting: ViewableRouting {
 }
 
 /// The application root router base class, that acts as the root of the router tree.
-open class LauchRouter<InteractorType, ViewControllerType>: ViewableRouter<InteractorType, ViewControllerType>, LaunchRouting {
+open class LaunchRouter<InteractorType, ViewControllerType>: ViewableRouter<InteractorType, ViewControllerType>, LaunchRouting {
 
     /// Initializer.
     ///
