@@ -21,4 +21,4 @@ xcodeTemplate () {
 xcodeTemplate
 
 echo "==> ... success!"
-echo "==> RIBs have been set up. In Xcode, select 'New File...' to use RIBs templates."
+echo "==> BRICKs have been set up. In Xcode, select 'New File...' to use BRIcks templates."

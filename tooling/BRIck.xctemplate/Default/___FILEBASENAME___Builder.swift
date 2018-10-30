@@ -1,6 +1,6 @@
 // ___FILEHEADER___
 
-import BRIck
+import BRI
 
 protocol ___VARIABLE_productName___Dependency: Dependency {
     // TODO: Declare the set of dependencies required by this BRIck, but cannot be created by this BRIck.
