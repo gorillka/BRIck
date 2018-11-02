@@ -1,6 +1,6 @@
 // ___FILEHEADER___
 
-import BRI
+import BRIck
 
 protocol ___VARIABLE_productName___Routing: LaunchRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree view the router.

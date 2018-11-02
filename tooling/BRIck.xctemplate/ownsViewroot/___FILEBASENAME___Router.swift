@@ -1,6 +1,6 @@
 // ___FILEHEADER___
 
-import BRI
+import BRIck
 
 protocol ___VARIABLE_productName___Interactable: Interactable {
     var router: ___VARIABLE_productName___Routing? { get set }

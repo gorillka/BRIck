@@ -1,7 +1,7 @@
 // ___FILEHEADER___
 
 import UIKit
-import BRI
+import BRIck
 
 protocol ___VARIABLE_productName___PresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform business logic, such as signIn().
