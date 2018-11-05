@@ -10,6 +10,8 @@ import UIKit
 
 /// The base protocol for all routers that own their own view controllers.
 public protocol ViewableRouting: Routing {
+    /// The base view controllable associated with this `Router`.
+    var viewControllable: ViewControllable { get }
     func show(from: UIViewController, embedInNavigationController: Bool)
     func show(from container: UIViewController, inside targetView: UIView)
 }
