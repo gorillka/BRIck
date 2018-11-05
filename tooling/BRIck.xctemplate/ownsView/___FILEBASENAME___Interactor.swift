@@ -2,7 +2,7 @@
 
 import BRIck
 
-protocol ___VARIABLE_productName___Routing: Routing {
+protocol ___VARIABLE_productName___Routing: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree view the router.
 }
 
