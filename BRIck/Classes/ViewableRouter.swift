@@ -12,8 +12,9 @@ import UIKit
 public protocol ViewableRouting: Routing {
     /// The base view controllable associated with this `Router`.
     var viewControllable: ViewControllable { get }
-    func show(from: UIViewController, embedInNavigationController: Bool)
-    func show(from container: UIViewController, inside targetView: UIView)
+    func show(from: ViewControllable, embedInNavigationController: Bool)
+    func show(from container: ViewControllable, inside targetView: UIView)
+    func replace(to viewControllable: ViewControllable)
 }
 
 /// The base class of all routers that owns view controllers, representing applications states.
@@ -42,11 +43,14 @@ open class ViewableRouter<InteractorType, ViewControllerType>: Router<Interactor
 
         super.init(interactor: interactor)
     }
+
+    fileprivate var targetViewController: ViewControllable?
+    fileprivate var animationInProgress = false
 }
 
 public extension ViewableRouter {
 
-    func show(from: UIViewController, embedInNavigationController: Bool = false) {
+    func show(from: ViewControllable, embedInNavigationController: Bool = false) {
         let view: UIViewController
 
         if embedInNavigationController {
@@ -55,19 +59,19 @@ public extension ViewableRouter {
             view = viewControllable.uiViewController
         }
 
-        from.show(view, sender: nil)
+        from.uiViewController.show(view, sender: nil)
 
         interactable.activate()
         load()
     }
 
-    func show(from container: UIViewController, inside targetView: UIView) {
+    func show(from container: ViewControllable, inside targetView: UIView) {
 
-        container.addChild(viewControllable.uiViewController)
+        container.uiViewController.addChild(viewControllable.uiViewController)
         targetView.addSubview(viewControllable.uiViewController.view)
 
         stretchToBounds(holder: targetView, view: viewControllable.uiViewController.view)
-        viewControllable.uiViewController.didMove(toParent: container)
+        viewControllable.uiViewController.didMove(toParent: container.uiViewController)
 
         interactable.activate()
         load()
@@ -83,6 +87,43 @@ public extension ViewableRouter {
         }
 
         holder.addConstraints(pinConstraints)
+    }
+
+    public func replace(to controller: ViewControllable) {
+        targetViewController = controller
+
+        if animationInProgress {
+            return
+        }
+
+        if self.viewControllable.uiViewController.presentedViewController != nil {
+            animationInProgress = true
+            viewControllable.uiViewController.dismiss(animated: true) { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                if self.targetViewController != nil {
+                    self.presentTargetViewController()
+                } else {
+                    self.animationInProgress = false
+                }
+            }
+        } else {
+            presentTargetViewController()
+        }
+    }
+
+    private func presentTargetViewController() {
+        guard let targetViewController = targetViewController else {
+            return
+        }
+        animationInProgress = true
+        viewControllable.uiViewController.present(targetViewController.uiViewController, animated: true) { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.animationInProgress = false
+        }
     }
 }
 
