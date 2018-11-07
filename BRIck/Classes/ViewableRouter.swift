@@ -14,7 +14,7 @@ public protocol ViewableRouting: Routing {
     var viewControllable: ViewControllable { get }
     func show(from: ViewControllable, embedInNavigationController: Bool)
     func show(from container: ViewControllable, inside targetView: UIView)
-    func replace(to viewControllable: ViewControllable)
+    func replace(to viewControllable: ViewControllable?)
 }
 
 /// The base class of all routers that owns view controllers, representing applications states.
@@ -89,7 +89,7 @@ public extension ViewableRouter {
         holder.addConstraints(pinConstraints)
     }
 
-    public func replace(to controller: ViewControllable) {
+    public func replace(to controller: ViewControllable?) {
         targetViewController = controller
 
         if animationInProgress {
