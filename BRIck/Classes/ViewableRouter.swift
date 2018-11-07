@@ -46,7 +46,7 @@ open class ViewableRouter<InteractorType, ViewControllerType>: Router<Interactor
 }
 
 extension ViewableRouter {
-    public func show(_ router: ViewableRouter, embedInNavigationController: Bool = false) {
+    public func show(_ router: ViewableRouting, embedInNavigationController: Bool = false) {
         let vc: UIViewController
         if embedInNavigationController {
             vc = router.viewControllable.uiViewController.embedInNavigationController()
