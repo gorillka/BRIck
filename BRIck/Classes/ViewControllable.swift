@@ -11,6 +11,7 @@ import UIKit
 /// Basic interface between a `Router` and the UIKit `UIViewController`.
 public protocol ViewControllable: class {
     var uiViewController: UIViewController { get }
+    func show(_ viewController: ViewControllable, embedInNavigationController: Bool)
 }
 
 /// Default implementation on `UIViewController` to conform to `ViewControllable` protocol.
@@ -18,15 +19,25 @@ public extension ViewControllable where Self: UIViewController {
     var uiViewController: UIViewController {
         return self
     }
+    func show(_ viewController: ViewControllable, embedInNavigationController: Bool = false) {
+        let vc: UIViewController
+        if embedInNavigationController {
+            vc = viewController.uiViewController.embedInNavigationController()
+        } else {
+            vc = viewController.uiViewController
+        }
+
+        uiViewController.show(vc, sender: nil)
+    }
 }
 
-extension ViewControllable where Self: UIViewController {
-    fileprivate var navigationController: UINavigationController? {
+extension UIViewController {
+    fileprivate var navController: UINavigationController? {
         var result: UINavigationController?
 
-        if let navigationController = uiViewController.navigationController {
+        if let navigationController = navigationController {
             result = navigationController
-        } else if let parent = uiViewController.parent,
+        } else if let parent = parent,
             let navigationController = parent.navigationController {
             result = navigationController
         }
@@ -35,6 +46,6 @@ extension ViewControllable where Self: UIViewController {
     }
 
     func embedInNavigationController() -> UINavigationController {
-        return navigationController ?? UINavigationController(rootViewController: uiViewController)
+        return navController ?? UINavigationController(rootViewController: self)
     }
 }
