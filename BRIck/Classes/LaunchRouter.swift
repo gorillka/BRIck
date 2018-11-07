@@ -15,8 +15,7 @@ public protocol LaunchRouting: ViewableRouting {
     ///
     /// - Parameters:
     ///   - window: The application window to launch from.
-    ///   - embedInNavigationController: Indicates the need to embed a view controller in a `UINavigationController`.
-    func launch(in window: UIWindow, embedInNavigationController: Bool)
+    func launch(in window: UIWindow)
 }
 
 /// The application root router base class, that acts as the root of the router tree.
@@ -35,15 +34,8 @@ open class LaunchRouter<InteractorType, ViewControllerType>: ViewableRouter<Inte
     ///
     /// - Parameters:
     ///   - window: The application window to launch from.
-    ///   - embedInNavigationController: Indicates the need to embed a view controller in a `UINavigationController`.
-    public func launch(in window: UIWindow, embedInNavigationController: Bool = false) {
-        let view: UIViewController
-
-        if embedInNavigationController {
-            view = self.embedInNavigationController()
-        } else {
-            view = viewControllable.uiViewController
-        }
+    public func launch(in window: UIWindow) {
+        let view = viewControllable.uiViewController
 
         window.rootViewController = view
         window.makeKeyAndVisible()
