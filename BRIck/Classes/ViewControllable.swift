@@ -19,3 +19,22 @@ public extension ViewControllable where Self: UIViewController {
         return self
     }
 }
+
+extension ViewControllable where Self: UIViewController {
+    fileprivate var navigationController: UINavigationController? {
+        var result: UINavigationController?
+
+        if let navigationController = uiViewController.navigationController {
+            result = navigationController
+        } else if let parent = uiViewController.parent,
+            let navigationController = parent.navigationController {
+            result = navigationController
+        }
+
+        return result
+    }
+
+    func embedInNavigationController() -> UINavigationController {
+        return navigationController ?? UINavigationController(rootViewController: uiViewController)
+    }
+}
