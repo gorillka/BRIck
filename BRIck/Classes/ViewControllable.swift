@@ -11,6 +11,8 @@ import UIKit
 /// Basic interface between a `Router` and the UIKit `UIViewController`.
 public protocol ViewControllable: class {
     var uiViewController: UIViewController { get }
+    func show(_ controller: ViewControllable, embedInNavigationController: Bool)
+    func show(_ controller: ViewControllable, insideView targetView: UIView)
 }
 
 /// Default implementation on `UIViewController` to conform to `ViewControllable` protocol.
