@@ -37,7 +37,15 @@ public extension ViewControllable where Self: UIViewController {
 
 fileprivate extension UIViewController {
     func embedInNavigationController() -> UINavigationController {
-        return getNavigationController() ?? UINavigationController(rootViewController: self)
+        let result: UINavigationController
+
+        if let navigationController = navigationController {
+            result = navigationController
+        } else {
+            result = UINavigationController(rootViewController: self)
+        }
+
+        return result
     }
 
     func getNavigationController() -> UINavigationController? {
