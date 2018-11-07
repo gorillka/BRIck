@@ -44,3 +44,16 @@ open class ViewableRouter<InteractorType, ViewControllerType>: Router<Interactor
     fileprivate var targetViewController: ViewControllable?
     fileprivate var animationInProgress = false
 }
+
+extension ViewableRouter {
+    public func show(_ router: ViewableRouter, embedInNavigationController: Bool = false) {
+        let vc: UIViewController
+        if embedInNavigationController {
+            vc = router.viewControllable.uiViewController.embedInNavigationController()
+        } else {
+            vc = router.viewControllable.uiViewController
+        }
+
+        viewControllable.uiViewController.show(vc, sender: nil)
+    }
+}
