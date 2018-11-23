@@ -19,6 +19,11 @@
 		237D72AC2111F0CC007B68CF /* ViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72AB2111F0CC007B68CF /* ViewControllable.swift */; };
 		237D72AE2111F3EA007B68CF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72AD2111F3EA007B68CF /* Presenter.swift */; };
 		238FEE512113149800844DF1 /* PresentableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FEE502113149800844DF1 /* PresentableInteractor.swift */; };
+		AC964E2221A834B300825496 /* WorkflowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC964E2121A834B300825496 /* WorkflowError.swift */; };
+		AC964E2421A8352200825496 /* WorkflowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC964E2321A8352200825496 /* WorkflowState.swift */; };
+		AC964E2621A8364800825496 /* WorkflowResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC964E2521A8364800825496 /* WorkflowResult.swift */; };
+		AC964E2821A8392100825496 /* WorkflowObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC964E2721A8392100825496 /* WorkflowObserver.swift */; };
+		AC964E2A21A8397C00825496 /* Workflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC964E2921A8397C00825496 /* Workflow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		237D72AB2111F0CC007B68CF /* ViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllable.swift; sourceTree = "<group>"; };
 		237D72AD2111F3EA007B68CF /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		238FEE502113149800844DF1 /* PresentableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableInteractor.swift; sourceTree = "<group>"; };
+		AC964E2121A834B300825496 /* WorkflowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowError.swift; sourceTree = "<group>"; };
+		AC964E2321A8352200825496 /* WorkflowState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowState.swift; sourceTree = "<group>"; };
+		AC964E2521A8364800825496 /* WorkflowResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowResult.swift; sourceTree = "<group>"; };
+		AC964E2721A8392100825496 /* WorkflowObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowObserver.swift; sourceTree = "<group>"; };
+		AC964E2921A8397C00825496 /* Workflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workflow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,7 @@
 				237D72AB2111F0CC007B68CF /* ViewControllable.swift */,
 				23288DC22110E19200D091F6 /* DI */,
 				23249BC82111BE6F00A5A3EA /* Extension */,
+				AC964E2021A833D000825496 /* Workflow */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -107,6 +118,18 @@
 				23288DC52110E22400D091F6 /* Component.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		AC964E2021A833D000825496 /* Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				AC964E2921A8397C00825496 /* Workflow.swift */,
+				AC964E2521A8364800825496 /* WorkflowResult.swift */,
+				AC964E2721A8392100825496 /* WorkflowObserver.swift */,
+				AC964E2321A8352200825496 /* WorkflowState.swift */,
+				AC964E2121A834B300825496 /* WorkflowError.swift */,
+			);
+			path = Workflow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,15 +212,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				23288DCA2110E46100D091F6 /* Router.swift in Sources */,
+				AC964E2621A8364800825496 /* WorkflowResult.swift in Sources */,
 				237D72AA2111EED4007B68CF /* LaunchRouter.swift in Sources */,
+				AC964E2821A8392100825496 /* WorkflowObserver.swift in Sources */,
+				AC964E2A21A8397C00825496 /* Workflow.swift in Sources */,
 				23249BCA2111BE8D00A5A3EA /* Array+.swift in Sources */,
 				237D72A62111EE6B007B68CF /* ViewableRouter.swift in Sources */,
 				237D72AE2111F3EA007B68CF /* Presenter.swift in Sources */,
 				23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */,
 				23249BC72111BA0100A5A3EA /* Interactor.swift in Sources */,
+				AC964E2221A834B300825496 /* WorkflowError.swift in Sources */,
 				238FEE512113149800844DF1 /* PresentableInteractor.swift in Sources */,
 				23288DC62110E22400D091F6 /* Component.swift in Sources */,
 				237D72AC2111F0CC007B68CF /* ViewControllable.swift in Sources */,
+				AC964E2421A8352200825496 /* WorkflowState.swift in Sources */,
 				23288DC82110E3D400D091F6 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
