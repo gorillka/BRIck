@@ -10,10 +10,12 @@
 import Foundation
 
 open class Workflow<ActionableItemType> {
+    public typealias BecomeActiveHandler = () -> Void
     public typealias DoneHandler = (ActionableItemType) -> Void
     public typealias FailureHandler = (Error) -> Void
     public typealias CompletionHandler = (WorkflowResult<ActionableItemType>) -> Void
 
+    fileprivate(set) var becomeActiveHandlers: [BecomeActiveHandler] = []
     fileprivate(set) var doneHandlers: [DoneHandler] = []
     fileprivate(set) var failureHandlers: [FailureHandler] = []
     fileprivate(set) var completionHandlers: [CompletionHandler] = []
@@ -44,6 +46,8 @@ open class Workflow<ActionableItemType> {
                 state: WorkflowState<ActionableItemType> = .pending) {
         self.queue = queue
         self.state = state
+
+        becomeActive()
     }
 
     /// Create a workflow that resolves using a synchronous closure.
@@ -106,6 +110,14 @@ open class Workflow<ActionableItemType> {
     }
 
     // MARK: - Callbacks
+
+    /// Adds a handler to be called when the workflow object will become active.
+    @discardableResult
+    public final func becomeActive(_ handler: @escaping BecomeActiveHandler) -> Self {
+        becomeActiveHandlers.append(handler)
+
+        return self
+    }
 
     /// Adds a handler to be called when the workflow object is resolved with a value.
     @discardableResult
@@ -176,6 +188,13 @@ open class Workflow<ActionableItemType> {
 
     private func dispatch(_ queue: DispatchQueue, closure: @escaping () -> Void) {
         queue.async(execute: closure)
+    }
+
+    private func becomeActive() {
+        dispatch(queue) {
+            self.becomeActiveHandlers.forEach { $0() }
+            self.becomeActiveHandlers.removeAll()
+        }
     }
 }
 
