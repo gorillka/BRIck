@@ -12,7 +12,7 @@ import UIKit
 open class PresentableInteractor<PresenterType>: Interactor {
 
     /// The `Presenter` associated with this `Interactor`.
-    let presenter: PresenterType
+    public let presenter: PresenterType
 
     /// Initializer.
     ///
