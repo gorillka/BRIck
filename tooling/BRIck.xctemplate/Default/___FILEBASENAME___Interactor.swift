@@ -3,19 +3,22 @@
 import BRIck
 
 protocol ___VARIABLE_productName___Routing: Routing {
+
     // TODO: Declare methods the interactor can invoke to manage sub-tree view the router.
 }
 
 protocol ___VARIABLE_productName___Listener: class {
+
     // TODO: Declare methods the interactor can invoke to communicate with other BRIcks.
 }
 
-final class ___VARIABLE_productName___Interactor: Interactor, ___VARIABLE_productName___Interactable {
+final class ___VARIABLE_productName___Interactor: Interactor {
 
     weak var router: ___VARIABLE_productName___Routing?
     weak var listener: ___VARIABLE_productName___Listener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
+
     override init() {}
 
     override func didBecomeActive() {
@@ -30,3 +33,5 @@ final class ___VARIABLE_productName___Interactor: Interactor, ___VARIABLE_produc
         // TODO: Pause any business logic.
     }
 }
+
+extension ___VARIABLE_productName___Interactor:  ___VARIABLE_productName___Interactable {}

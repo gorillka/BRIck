@@ -3,6 +3,7 @@
 import BRIck
 
 protocol ___VARIABLE_productName___Routing: LaunchRouting {
+
     // TODO: Declare methods the interactor can invoke to manage sub-tree view the router.
 }
 
@@ -13,15 +14,17 @@ protocol ___VARIABLE_productName___Presentable: Presentable {
 }
 
 protocol ___VARIABLE_productName___Listener: class {
+
     // TODO: Declare methods the interactor can invoke to communicate with other BRIcks.
 }
 
-final class ___VARIABLE_productName___Interactor: PresentableInteractor<___VARIABLE_productName___Presentable>, ___VARIABLE_productName___Interactable, ___VARIABLE_productName___PresentableListener {
+final class ___VARIABLE_productName___Interactor: PresentableInteractor<___VARIABLE_productName___Presentable> {
 
     weak var router: ___VARIABLE_productName___Routing?
     weak var listener: ___VARIABLE_productName___Listener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
+
     override init(presenter: ___VARIABLE_productName___Presentable) {
         super.init(presenter: presenter)
         presenter.listener = self
@@ -39,3 +42,7 @@ final class ___VARIABLE_productName___Interactor: PresentableInteractor<___VARIA
         // TODO: Pause any business logic.
     }
 }
+
+extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___PresentableListener {}
+
+extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___Interactable {}
