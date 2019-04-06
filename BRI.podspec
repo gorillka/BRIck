@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'BRI'
-  s.version      = '1.0.3'
+  s.version      = '1.1.0'
   s.summary      = 'BRIck is mobile architecture.'
 
   s.description  = <<-DESC
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/gorillka/BRIck.git', :tag => s.version.to_s }
   s.source_files  = 'BRIck/*.h', 'BRIck/**/*.swift'
 
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   
 
 end

@@ -33,7 +33,7 @@ public extension ViewControllable where Self: UIViewController {
     }
 }
 
-fileprivate extension UIViewController {
+private extension UIViewController {
     func embedInNavigationController() -> UINavigationController {
         return getNavigationController() ?? UINavigationController(rootViewController: self)
     }

@@ -1,7 +1,7 @@
 # Install
 ## Carthage
 ```
-git "https://github.com/gorillka/BRIck" ~> 1.0.5
+git "https://github.com/gorillka/BRIck" ~> 1.1.0
 ```
 ## License
 
