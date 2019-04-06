@@ -6,15 +6,9 @@
 //  Copyright © 2018 Gorilka. All rights reserved.
 //
 
-import Foundation
-
-/// The base protocol for all `Presenter`'s.
-public protocol Presentable: class {}
-
 /// The base class of all `Presenter`'s. A `Presenter` translates business models into values the corresponding `ViewController` can consume and display.
 /// It also maps UI events to business logic method, invoke to its listener.
-open class Presenter<ViewControllerType: AnyObject>: Presentable {
-
+open class Presenter<ViewControllerType: AnyObject> {
     /// The `ViewController` of this `Presenter`.
     let viewController: ViewControllerType
 

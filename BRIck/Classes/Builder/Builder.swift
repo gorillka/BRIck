@@ -6,17 +6,11 @@
 //  Copyright © 2018 Gorilka. All rights reserved.
 //
 
-import Foundation
-
-/// The base builder protocol that all builders should conform to.
-public protocol Buildable: class {}
-
 /// Utility that instantiates a BRIck and sets up its internal dependencies.
-open class Builder<DependencyType>: Buildable {
-
+open class Builder<DependencyType> {
     /// The dependency used for this builder to build BRIck.
     public let dependency: DependencyType
-    
+
     /// initializer.
     ///
     /// - Parameter dependency: The dependency used for this builder to build the BRIck.

@@ -6,33 +6,6 @@
 //  Copyright © 2018 Gorilka. All rights reserved.
 //
 
-import Foundation
-
-/// The base protocol for all routers.
-public protocol Routing: class {
-
-    /// The base interactable associated with this `Router`.
-    var interactable: Interactable { get }
-
-    /// The list of children routers of this `Router`.
-    var children: [Routing] { get }
-
-    /// Loads the `Router`.
-    ///
-    /// - Note: This method is internally used by framework. Application code should never invoke this method explicitly.
-    func load()
-
-    /// Attaches the given router as child.
-    ///
-    /// - Parameter child: The child router to attach.
-    func attach(_ child: Routing)
-
-    /// Detaches the given router from the tree.
-    ///
-    /// - Parameter child: The child router to detach.
-    func detach(_ child: Routing)
-}
-
 /// The base class of all routers that does not own view controllers, representing application states.
 ///
 /// A router acts on inputs from its corresponding interactor, to manipulate application state, forming a tree of routers.
@@ -41,8 +14,7 @@ public protocol Routing: class {
 /// Router drives the lifecycle of its owned `Interactor`.
 ///
 /// Routers should always use helper builders to instantiate children routers.
-open class Router<InteractorType>: Routing {
-
+open class Router<InteractorType> {
     /// The corresponding `Interactor` owned by this `Router`.
     public let interactor: InteractorType
 
@@ -52,7 +24,7 @@ open class Router<InteractorType>: Routing {
     /// The list of children `Router`s of this `Router`.
     public final var children: [Routing] = []
 
-    private var didLoadFlag: Bool = false
+    fileprivate var didLoadFlag: Bool = false
 
     /// Initializer.
     ///
@@ -66,58 +38,33 @@ open class Router<InteractorType>: Routing {
         self.interactable = interactable
     }
 
+    deinit {
+        interactable.deactivate()
+
+        if !children.isEmpty {
+            detachAllChildren()
+        }
+    }
+}
+
+extension Router {
     /// Loads the `Router`.
     ///
     /// - Note: This method is internally used by the framework. Application code should never invoke this method explicitly.
-    public final func load() {
-        guard !didLoadFlag else {
-            return
-        }
+    public func load() {
+        guard !didLoadFlag else { return }
 
         didLoadFlag = true
         internalDidLoad()
         didLoad()
     }
 
-    /// Called when the router has finished loading.
-    ///
-    /// This method is invoke only once. Subclasses should override this method to perform one time setup logic,
-    /// such as attaching immutable children. The default implementation does nothing.
-    open func didLoad() {
-        // No-op
-    }
-
-    /// Attaches the given router as child.
-    ///
-    /// - Parameter child: The child router to attach.
-    public final func attach(_ child: Routing) {
-        assert(!(children.contains { $0 === child }), "Attempt to attach child: \(child), wich is already attached to \(self).")
-
-        children.append(child)
-
-        child.interactable.activate()
-        child.load()
-    }
-
-    /// Detaches the given router from the tree.
-    ///
-    /// - Parameter child: The child router to detach.
-    public final func detach(_ child: Routing) {
-        child.interactable.deactivate()
-
-        children.removeElementByReference(child)
-    }
-
-    // MARK: - Internal
-
-    internal func internalDidLoad() {
+    private func internalDidLoad() {
         interactable.activityHandler = { [weak self] isActive in
             guard let strongSelf = self else { return }
             strongSelf.setSubtreeActive(isActive)
         }
     }
-
-    // MARK: - Private
 
     private func setSubtreeActive(_ active: Bool) {
         switch active {
@@ -144,13 +91,5 @@ open class Router<InteractorType>: Routing {
 
     private func detachAllChildren() {
         children.forEach { detach($0) }
-    }
-
-    deinit {
-        interactable.deactivate()
-
-        if !children.isEmpty {
-            detachAllChildren()
-        }
     }
 }

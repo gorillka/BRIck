@@ -19,6 +19,20 @@
 		237D72AC2111F0CC007B68CF /* ViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72AB2111F0CC007B68CF /* ViewControllable.swift */; };
 		237D72AE2111F3EA007B68CF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237D72AD2111F3EA007B68CF /* Presenter.swift */; };
 		238FEE512113149800844DF1 /* PresentableInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238FEE502113149800844DF1 /* PresentableInteractor.swift */; };
+		AC8FA242225865FB00482F0D /* BuildableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA241225865FB00482F0D /* BuildableProtocol.swift */; };
+		AC8FA2442258662B00482F0D /* Builder+Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA2432258662B00482F0D /* Builder+Buildable.swift */; };
+		AC8FA2472258666200482F0D /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA2462258666200482F0D /* Routing.swift */; };
+		AC8FA249225868FB00482F0D /* Router+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA248225868FB00482F0D /* Router+Routing.swift */; };
+		AC8FA24B22586B4100482F0D /* ViewableRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA24A22586B4100482F0D /* ViewableRouting.swift */; };
+		AC8FA24F22586BA400482F0D /* ViewableRouter+ViewableRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA24E22586BA400482F0D /* ViewableRouter+ViewableRouting.swift */; };
+		AC8FA25122586BE300482F0D /* LaunchRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA25022586BE300482F0D /* LaunchRouting.swift */; };
+		AC8FA25322586CC000482F0D /* LaunchRouter+LaunchRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA25222586CC000482F0D /* LaunchRouter+LaunchRouting.swift */; };
+		AC8FA25722586D0B00482F0D /* InteractorScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA25622586D0B00482F0D /* InteractorScope.swift */; };
+		AC8FA25922586D7F00482F0D /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA25822586D7F00482F0D /* Interactable.swift */; };
+		AC8FA25C22586EA100482F0D /* Interactor+InteractorScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA25B22586EA100482F0D /* Interactor+InteractorScope.swift */; };
+		AC8FA25E225874B900482F0D /* Interactor+Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA25D225874B900482F0D /* Interactor+Interactable.swift */; };
+		AC8FA263225875D400482F0D /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA262225875D400482F0D /* Presentable.swift */; };
+		AC8FA265225875FA00482F0D /* Presenter+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FA264225875FA00482F0D /* Presenter+Presentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +50,20 @@
 		237D72AB2111F0CC007B68CF /* ViewControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllable.swift; sourceTree = "<group>"; };
 		237D72AD2111F3EA007B68CF /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		238FEE502113149800844DF1 /* PresentableInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableInteractor.swift; sourceTree = "<group>"; };
+		AC8FA241225865FB00482F0D /* BuildableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildableProtocol.swift; sourceTree = "<group>"; };
+		AC8FA2432258662B00482F0D /* Builder+Buildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Builder+Buildable.swift"; sourceTree = "<group>"; };
+		AC8FA2462258666200482F0D /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		AC8FA248225868FB00482F0D /* Router+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Routing.swift"; sourceTree = "<group>"; };
+		AC8FA24A22586B4100482F0D /* ViewableRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableRouting.swift; sourceTree = "<group>"; };
+		AC8FA24E22586BA400482F0D /* ViewableRouter+ViewableRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewableRouter+ViewableRouting.swift"; sourceTree = "<group>"; };
+		AC8FA25022586BE300482F0D /* LaunchRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouting.swift; sourceTree = "<group>"; };
+		AC8FA25222586CC000482F0D /* LaunchRouter+LaunchRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchRouter+LaunchRouting.swift"; sourceTree = "<group>"; };
+		AC8FA25622586D0B00482F0D /* InteractorScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorScope.swift; sourceTree = "<group>"; };
+		AC8FA25822586D7F00482F0D /* Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
+		AC8FA25B22586EA100482F0D /* Interactor+InteractorScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interactor+InteractorScope.swift"; sourceTree = "<group>"; };
+		AC8FA25D225874B900482F0D /* Interactor+Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interactor+Interactable.swift"; sourceTree = "<group>"; };
+		AC8FA262225875D400482F0D /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		AC8FA264225875FA00482F0D /* Presenter+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Presenter+Presentable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +114,10 @@
 		23288DC12110E18200D091F6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				23288DC72110E3D400D091F6 /* Builder.swift */,
-				23288DC92110E46100D091F6 /* Router.swift */,
-				23249BC62111BA0100A5A3EA /* Interactor.swift */,
-				237D72A52111EE6B007B68CF /* ViewableRouter.swift */,
-				237D72A92111EED4007B68CF /* LaunchRouter.swift */,
-				237D72AD2111F3EA007B68CF /* Presenter.swift */,
-				238FEE502113149800844DF1 /* PresentableInteractor.swift */,
+				AC8FA240225865E100482F0D /* Builder */,
+				AC8FA2452258664700482F0D /* Router */,
+				AC8FA25422586CDF00482F0D /* Interactor */,
+				AC8FA25F225875A000482F0D /* Presenter */,
 				237D72AB2111F0CC007B68CF /* ViewControllable.swift */,
 				23288DC22110E19200D091F6 /* DI */,
 				23249BC82111BE6F00A5A3EA /* Extension */,
@@ -107,6 +132,103 @@
 				23288DC52110E22400D091F6 /* Component.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		AC8FA240225865E100482F0D /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FA241225865FB00482F0D /* BuildableProtocol.swift */,
+				23288DC72110E3D400D091F6 /* Builder.swift */,
+				AC8FA2432258662B00482F0D /* Builder+Buildable.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		AC8FA2452258664700482F0D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				23288DC92110E46100D091F6 /* Router.swift */,
+				237D72A52111EE6B007B68CF /* ViewableRouter.swift */,
+				237D72A92111EED4007B68CF /* LaunchRouter.swift */,
+				AC8FA24C22586B5800482F0D /* Protocols */,
+				AC8FA24D22586B6200482F0D /* Extensions */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AC8FA24C22586B5800482F0D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FA2462258666200482F0D /* Routing.swift */,
+				AC8FA24A22586B4100482F0D /* ViewableRouting.swift */,
+				AC8FA25022586BE300482F0D /* LaunchRouting.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AC8FA24D22586B6200482F0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FA248225868FB00482F0D /* Router+Routing.swift */,
+				AC8FA24E22586BA400482F0D /* ViewableRouter+ViewableRouting.swift */,
+				AC8FA25222586CC000482F0D /* LaunchRouter+LaunchRouting.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC8FA25422586CDF00482F0D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				23249BC62111BA0100A5A3EA /* Interactor.swift */,
+				AC8FA25522586CF100482F0D /* Protocols */,
+				AC8FA25A22586E7800482F0D /* Extensions */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AC8FA25522586CF100482F0D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FA25622586D0B00482F0D /* InteractorScope.swift */,
+				AC8FA25822586D7F00482F0D /* Interactable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AC8FA25A22586E7800482F0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FA25B22586EA100482F0D /* Interactor+InteractorScope.swift */,
+				AC8FA25D225874B900482F0D /* Interactor+Interactable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC8FA25F225875A000482F0D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				237D72AD2111F3EA007B68CF /* Presenter.swift */,
+				238FEE502113149800844DF1 /* PresentableInteractor.swift */,
+				AC8FA261225875B400482F0D /* Protocols */,
+				AC8FA260225875AB00482F0D /* Extensions */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AC8FA260225875AB00482F0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FA264225875FA00482F0D /* Presenter+Presentable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC8FA261225875B400482F0D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AC8FA262225875D400482F0D /* Presentable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23288DBB2110DF3700D091F6 /* Build configuration list for PBXNativeTarget "BRIck" */;
 			buildPhases = (
+				AC2A15A02258AD0200D7CD40 /* SwiftFormat */,
 				23288DAE2110DF3700D091F6 /* Headers */,
 				23288DAF2110DF3700D091F6 /* Sources */,
 				23288DB02110DF3700D091F6 /* Frameworks */,
@@ -183,22 +306,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AC2A15A02258AD0200D7CD40 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#! /usr/bin/env bash\n\nif ! which swiftformat &> /dev/null; then\nprintf \"\\e[1;31mYou don't have SwiftFormat installed.  Please install swift format by visiting https://github.com/nicklockwood/SwiftFormat.\\e[0m\\n\"\nexit 1\nfi\n\nOUTPUT=$(swiftformat \\\n--cache ignore \\\n--indent 4 \\\n--allman false \\\n--wraparguments afterfirst \\\n--wrapelements beforefirst \\\n--exponentcase uppercase \\\n--binarygrouping none \\\n--empty void \\\n--ranges nospace \\\n--trimwhitespace always \\\n--hexliteralcase lowercase \\\n--linebreaks lf \\\n--decimalgrouping none \\\n--commas inline \\\n--comments ignore \\\n--octalgrouping none \\\n--hexgrouping none \\\n--semicolons inline \\\n--disable redundantSelf,unusedArguments,hoistPatternLet,redundantBackticks,redundantReturn,linebreakAtEndOfFile \\\n--exclude tooling \\\n.)\n\nif [ \"$OUTPUT\" ]; then\necho \"$OUTPUT\" >&2\nexit 0\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		23288DAF2110DF3700D091F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				23288DCA2110E46100D091F6 /* Router.swift in Sources */,
+				AC8FA25322586CC000482F0D /* LaunchRouter+LaunchRouting.swift in Sources */,
 				237D72AA2111EED4007B68CF /* LaunchRouter.swift in Sources */,
+				AC8FA25E225874B900482F0D /* Interactor+Interactable.swift in Sources */,
+				AC8FA2472258666200482F0D /* Routing.swift in Sources */,
 				23249BCA2111BE8D00A5A3EA /* Array+.swift in Sources */,
 				237D72A62111EE6B007B68CF /* ViewableRouter.swift in Sources */,
+				AC8FA24F22586BA400482F0D /* ViewableRouter+ViewableRouting.swift in Sources */,
+				AC8FA265225875FA00482F0D /* Presenter+Presentable.swift in Sources */,
 				237D72AE2111F3EA007B68CF /* Presenter.swift in Sources */,
 				23288DC42110E1BD00D091F6 /* Dependency.swift in Sources */,
+				AC8FA24B22586B4100482F0D /* ViewableRouting.swift in Sources */,
+				AC8FA25122586BE300482F0D /* LaunchRouting.swift in Sources */,
+				AC8FA2442258662B00482F0D /* Builder+Buildable.swift in Sources */,
+				AC8FA25922586D7F00482F0D /* Interactable.swift in Sources */,
+				AC8FA242225865FB00482F0D /* BuildableProtocol.swift in Sources */,
 				23249BC72111BA0100A5A3EA /* Interactor.swift in Sources */,
 				238FEE512113149800844DF1 /* PresentableInteractor.swift in Sources */,
+				AC8FA263225875D400482F0D /* Presentable.swift in Sources */,
 				23288DC62110E22400D091F6 /* Component.swift in Sources */,
 				237D72AC2111F0CC007B68CF /* ViewControllable.swift in Sources */,
+				AC8FA25C22586EA100482F0D /* Interactor+InteractorScope.swift in Sources */,
+				AC8FA25722586D0B00482F0D /* InteractorScope.swift in Sources */,
 				23288DC82110E3D400D091F6 /* Builder.swift in Sources */,
+				AC8FA249225868FB00482F0D /* Router+Routing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,6 @@ import Foundation
 ///
 /// A component subclass implementation should conform to child `Dependency` protocols, defined by all of its immediate children.
 open class Component<DependencyType>: Dependency {
-
     /// The dependency of this `Component`.
     public let dependency: DependencyType
 
@@ -50,7 +49,7 @@ open class Component<DependencyType>: Dependency {
         return instance
     }
 
-    // MARK - Private
+    // MARK: - Private
 
     private var sharedInstances: [String: Any] = [:]
     private let lock: NSRecursiveLock = NSRecursiveLock()
@@ -58,7 +57,6 @@ open class Component<DependencyType>: Dependency {
 
 /// The special empty component.
 open class EmptyComponent: EmptyDependency {
-
     /// Initializer.
     public init() {}
 }

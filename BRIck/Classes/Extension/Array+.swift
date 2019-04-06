@@ -10,7 +10,6 @@ import Foundation
 
 /// Array extensions.
 public extension Array {
-
     /// Remove the given element from this array, by comparing pointer references.
     ///
     /// - parameter element: The element to remove.
