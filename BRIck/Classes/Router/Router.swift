@@ -15,7 +15,6 @@
 ///
 /// Routers should always use helper builders to instantiate children routers.
 open class Router<InteractorType> {
-
     /// The corresponding `Interactor` owned by this `Router`.
     public let interactor: InteractorType
 
@@ -49,7 +48,6 @@ open class Router<InteractorType> {
 }
 
 extension Router {
-
     /// Loads the `Router`.
     ///
     /// - Note: This method is internally used by the framework. Application code should never invoke this method explicitly.
@@ -59,7 +57,6 @@ extension Router {
         didLoadFlag = true
         internalDidLoad()
         didLoad()
-
     }
 
     private func internalDidLoad() {

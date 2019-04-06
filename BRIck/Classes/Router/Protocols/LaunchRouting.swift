@@ -10,7 +10,6 @@ import UIKit
 
 /// The root `Router` of an application.
 public protocol LaunchRouting: ViewableRouting {
-
     /// Launch the router tree.
     ///
     /// - Parameters:
@@ -19,7 +18,6 @@ public protocol LaunchRouting: ViewableRouting {
 }
 
 extension LaunchRouting {
-
     // Launch the router tree.
     ///
     /// - Parameters:

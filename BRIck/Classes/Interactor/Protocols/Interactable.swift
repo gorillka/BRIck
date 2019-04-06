@@ -8,7 +8,6 @@
 
 /// The base protocol for all interactors.
 public protocol Interactable: InteractorScope {
-
     /// Activate this interactor.
     ///
     /// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.
@@ -21,7 +20,6 @@ public protocol Interactable: InteractorScope {
 }
 
 extension Interactable where Self: Interactor {
-
     /// Activate the `Interactor`.
     ///
     /// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.

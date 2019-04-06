@@ -249,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23288DBB2110DF3700D091F6 /* Build configuration list for PBXNativeTarget "BRIck" */;
 			buildPhases = (
+				AC2A15A02258AD0200D7CD40 /* SwiftFormat */,
 				23288DAE2110DF3700D091F6 /* Headers */,
 				23288DAF2110DF3700D091F6 /* Sources */,
 				23288DB02110DF3700D091F6 /* Frameworks */,
@@ -304,6 +305,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC2A15A02258AD0200D7CD40 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#! /usr/bin/env bash\n\nif ! which swiftformat &> /dev/null; then\nprintf \"\\e[1;31mYou don't have SwiftFormat installed.  Please install swift format by visiting https://github.com/nicklockwood/SwiftFormat.\\e[0m\\n\"\nexit 1\nfi\n\nOUTPUT=$(swiftformat \\\n--cache ignore \\\n--indent 4 \\\n--allman false \\\n--wraparguments afterfirst \\\n--wrapelements beforefirst \\\n--exponentcase uppercase \\\n--binarygrouping none \\\n--empty void \\\n--ranges nospace \\\n--trimwhitespace always \\\n--hexliteralcase lowercase \\\n--linebreaks lf \\\n--decimalgrouping none \\\n--commas inline \\\n--comments ignore \\\n--octalgrouping none \\\n--hexgrouping none \\\n--semicolons inline \\\n--disable redundantSelf,unusedArguments,hoistPatternLet,redundantBackticks,redundantReturn,linebreakAtEndOfFile \\\n--exclude tooling \\\n.)\n\nif [ \"$OUTPUT\" ]; then\necho \"$OUTPUT\" >&2\nexit 0\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23288DAF2110DF3700D091F6 /* Sources */ = {

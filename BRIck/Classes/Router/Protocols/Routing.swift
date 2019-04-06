@@ -8,7 +8,6 @@
 
 /// The base protocol for all routers.
 public protocol Routing: class {
-
     /// The base interactable associated with this `Router`.
     var interactable: Interactable { get }
 
@@ -32,8 +31,6 @@ public protocol Routing: class {
 }
 
 extension Routing {
-
-
     /// Called when the router has finished loading.
     ///
     /// This method is invoke only once. Subclasses should override this method to perform one time setup logic,

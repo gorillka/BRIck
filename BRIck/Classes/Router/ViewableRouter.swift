@@ -12,7 +12,6 @@ import UIKit
 ///
 /// A `Router` acts on inputs from its corresponding interactors, representing application states.
 open class ViewableRouter<InteractorType, ViewControllerType>: Router<InteractorType> {
-
     /// The corresponding `ViewController` owned by this `Router`.
     public let viewController: ViewControllerType
 

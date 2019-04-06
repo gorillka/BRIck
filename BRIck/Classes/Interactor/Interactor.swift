@@ -13,7 +13,6 @@
 ///
 /// An `Interactor` should only perform its business logic when it's currently active.
 open class Interactor {
-
     /// A handler notifying on the lifecycle of this interactor.
     public var activityHandler: ActivityHandler?
 
