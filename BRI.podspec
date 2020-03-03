@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   
   s.source       = { :git => 'https://github.com/gorillka/BRIck.git', :tag => s.version.to_s }
-  s.source_files  = 'BRIck/Sources/*.h', 'BRIck/Sources/**/*.swift'
+  s.source_files  = 'Sources/BRIck/*.h', 'Sources/BRIck/**/*.swift'
 
   s.swift_version = '5.1'
   
