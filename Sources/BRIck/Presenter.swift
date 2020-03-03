@@ -1,14 +1,11 @@
-//
-//  Presenter.swift
-//  BRIck
-//
-//  Created by Gorilka on 8/1/18.
-//  Copyright © 2018 Gorilka. All rights reserved.
-//
+import UIKit
+
+/// The base protocol for all `Presenter`'s.
+public protocol Presentable: AnyObject {}
 
 /// The base class of all `Presenter`'s. A `Presenter` translates business models into values the corresponding `ViewController` can consume and display.
 /// It also maps UI events to business logic method, invoke to its listener.
-open class Presenter<ViewControllerType: AnyObject> {
+open class Presenter<ViewControllerType>: Presentable {
     /// The `ViewController` of this `Presenter`.
     let viewController: ViewControllerType
 

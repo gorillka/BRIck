@@ -1,26 +1,41 @@
-# Install
-## Carthage
+# BRIck
+
+## Installation
+---
+
+### Swift Package Manager
+
+You can use the [Swift Package Manager](https://github.com/apple/swift-package-manager) by declaring **BRIck** as a dependency in your `Package.swift` file:
+
+```swift
+.package(url: "https://github.com/gorillka/BRIck", from: "2.0.0")
 ```
-git "https://github.com/gorillka/BRIck" ~> 1.1.0
+
+*For more information, see [the Swift Package Manager documentation](https://github.com/apple/swift-package-manager/tree/master/Documentation).*
+
+### Carthage
+
+To integrate BRIck into your Xcode project using Carthage, specify it in your `Cartfile`:
 ```
-## License
+github "https://github.com/gorillka/BRIck" ~> 2.0.0
+```
 
-    Copyright (c) 2018 Artem Orynko
+### CocoaPods
 
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
+To integrate BRIck into your Xcode project using CocoaPods, specify it in your `Podfile`:
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
 
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
+target '<Your Target Name>' do
+    pod 'BRI', '~> 2.0.0'
+end
+```
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
+## BRIck Xcode Templates
+
+### Installation
+---
+
+Run the `install-xcode.template.sh` shell script to copy the templates to the Xcode templates folder. Once you have successfully copied the templates, when adding a new file in Xcode, the BRIck group will show up.

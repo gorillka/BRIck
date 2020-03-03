@@ -21,7 +21,7 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
-.DS_Store
+*.xcconfig
 
 ## Obj-C/Swift specific
 *.hmap
@@ -54,7 +54,9 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
+Carthage
 Carthage/Build
+Cartfile.resolved
 
 # fastlane
 #
@@ -67,3 +69,5 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+.DS_Store

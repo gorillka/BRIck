@@ -1,17 +1,14 @@
-//
-//  Builder.swift
-//  BRIck
-//
-//  Created by Gorilka on 7/31/18.
-//  Copyright © 2018 Gorilka. All rights reserved.
-//
+
+/// The base builder protocol that all builders should conform to.
+public protocol Buildable: AnyObject {}
 
 /// Utility that instantiates a BRIck and sets up its internal dependencies.
-open class Builder<DependencyType> {
+open class Builder<DependencyType>: Buildable {
+
     /// The dependency used for this builder to build BRIck.
     public let dependency: DependencyType
-
-    /// initializer.
+    
+    /// Initializer.
     ///
     /// - Parameter dependency: The dependency used for this builder to build the BRIck.
     public init(dependency: DependencyType) {

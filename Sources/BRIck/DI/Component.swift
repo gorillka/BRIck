@@ -1,14 +1,7 @@
-//
-//  Component.swift
-//  BRIck
-//
-//  Created by Gorilka on 7/31/18.
-//  Copyright © 2018 Gorilka. All rights reserved.
-//
 
 import Foundation
 
-/// The base cass for all components.
+/// The base class for all components.
 ///
 /// A component defines private properties a BRIck provides to its internal `Router`, `Interactor`, `Presenter` and
 /// view units, as well as public properties to its child BRIcks.
@@ -18,7 +11,7 @@ open class Component<DependencyType>: Dependency {
     /// The dependency of this `Component`.
     public let dependency: DependencyType
 
-    /// Initializer.
+    /// Initialiser.
     ///
     /// - Parameter dependency: The dependency of this `Component`, usually provided by the parent `Component`.
     public init(dependency: DependencyType) {
@@ -33,6 +26,8 @@ open class Component<DependencyType>: Dependency {
     /// - Parameters:
     ///   - factory: The closure to construct the dependency.
     /// - Returns: The instance.
+    @inline(__always)
+    @inlinable
     public final func shared<T>(__function: String = #function, _ factory: () -> T) -> T {
         lock.lock()
         defer {
@@ -51,12 +46,15 @@ open class Component<DependencyType>: Dependency {
 
     // MARK: - Private
 
-    private var sharedInstances: [String: Any] = [:]
-    private let lock: NSRecursiveLock = NSRecursiveLock()
+    @usableFromInline
+    internal var sharedInstances: [String: Any] = [:]
+    
+    @usableFromInline
+    internal let lock: NSRecursiveLock = NSRecursiveLock()
 }
 
 /// The special empty component.
 open class EmptyComponent: EmptyDependency {
-    /// Initializer.
+    /// Initialiser.
     public init() {}
 }

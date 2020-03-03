@@ -1,17 +1,15 @@
-//
-//  ViewableRouter.swift
-//  BRIck
-//
-//  Created by Gorilka on 8/1/18.
-//  Copyright © 2018 Gorilka. All rights reserved.
-//
 
-import UIKit
+
+/// The base protocol for all routers that own their own view controllers.
+public protocol ViewableRouting: Routing {
+    /// The base view controllable associated with this `Router`.
+    var viewControllable: ViewControllable { get }
+}
 
 /// The base class of all routers that owns view controllers, representing applications states.
 ///
 /// A `Router` acts on inputs from its corresponding interactors, representing application states.
-open class ViewableRouter<InteractorType, ViewControllerType>: Router<InteractorType> {
+open class ViewableRouter<InteractorType, ViewControllerType>: Router<InteractorType>, ViewableRouting {
     /// The corresponding `ViewController` owned by this `Router`.
     public let viewController: ViewControllerType
 
