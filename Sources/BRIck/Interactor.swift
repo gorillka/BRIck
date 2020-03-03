@@ -1,26 +1,26 @@
 
 /// Protocol defining the activeness of an interactor's scope.
 public protocol InteractorScope: AnyObject {
-    typealias ActivityHandler = (Bool) -> Swift.Void
+	typealias ActivityHandler = (Bool) -> Swift.Void
 
-    /// The lifecycle handler of this interactor.
-    var isActive: Bool { get }
+	/// The lifecycle handler of this interactor.
+	var isActive: Bool { get }
 
-    /// A handler notifying on the lifecycle of this interactor.
-    var activityHandler: ActivityHandler? { get set }
+	/// A handler notifying on the lifecycle of this interactor.
+	var activityHandler: ActivityHandler? { get set }
 }
 
 /// The base protocol for all interactors.
 public protocol Interactable: InteractorScope {
-    /// Activate this interactor.
-    ///
-    /// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.
-    func activate()
+	/// Activate this interactor.
+	///
+	/// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.
+	func activate()
 
-    /// Deactivate this interactor.
-    ///
-    /// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.
-    func deactivate()
+	/// Deactivate this interactor.
+	///
+	/// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.
+	func deactivate()
 }
 
 /// An `Interactor` defines a unit of business logic that corresponds to a router unit.
@@ -30,70 +30,70 @@ public protocol Interactable: InteractorScope {
 ///
 /// An `Interactor` should only perform its business logic when it's currently active.
 open class Interactor: Interactable {
-    /// A handler notifying on the lifecycle of this interactor.
-    public final var activityHandler: ActivityHandler?
+	/// A handler notifying on the lifecycle of this interactor.
+	public final var activityHandler: ActivityHandler?
 
-    /// The lifecycle handler of this interactor.
-    @inline(__always)
-    @inlinable
-    public final var isActive: Bool { _isActive }
-    
-    @usableFromInline
-    internal var _isActive: Bool = false {
-        didSet { activityHandler?(_isActive) }
-    }
+	/// The lifecycle handler of this interactor.
+	@inline(__always)
+	@inlinable
+	public final var isActive: Bool { _isActive }
 
-    /// Initializer.
-    public init() {}
+	@usableFromInline
+	internal var _isActive: Bool = false {
+		didSet { activityHandler?(_isActive) }
+	}
 
-    deinit {
-        if isActive {
-            deactivate()
-        }
+	/// Initializer.
+	public init() {}
 
-        activityHandler = nil
-    }
-    
-    /// Activate the `Interactor`.
-     ///
-     /// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.
-    @inline(__always)
-    @inlinable
-     public func activate() {
-         if isActive { return }
+	deinit {
+		if isActive {
+			deactivate()
+		}
 
-         _isActive = true
+		activityHandler = nil
+	}
 
-         didBecomeActive()
-     }
+	/// Activate the `Interactor`.
+	///
+	/// - Note: This method is internally invoked by the corresponding router. Application code should never explicitly invoke this method.
+	@inline(__always)
+	@inlinable
+	public func activate() {
+		if isActive { return }
 
-     /// Deactivate this `Interactor`.
-     ///
-     /// - Note: This method is internally invoked by the corresponding router. Application should never explicitly invoke this method.
-    @inline(__always)
-    @inlinable
-     public func deactivate() {
-         guard isActive else { return }
+		_isActive = true
 
-         willResignActive()
+		didBecomeActive()
+	}
 
-         _isActive = false
-     }
-    
-    /// The `Interactor` did become active.
-    ///
-    /// - Note: This method is driven by the attachment of this interactor's owner router.
-    /// Subclasses should override this method to setup initial state.
-    @inline(__always)
-    @inlinable
-    open func didBecomeActive() {}
+	/// Deactivate this `Interactor`.
+	///
+	/// - Note: This method is internally invoked by the corresponding router. Application should never explicitly invoke this method.
+	@inline(__always)
+	@inlinable
+	public func deactivate() {
+		guard isActive else { return }
 
-    /// Called when the `Interactor` will resign the active sate.
-    ///
-    /// This method is driven by the detachment of this `Interactors`'s owner router.
-    /// Subclasses should override this method to cleanup any resources and states of the `Interactor`.
-    /// The default implementation does nothing.
-    @inline(__always)
-    @inlinable
-    open func willResignActive() {}
+		willResignActive()
+
+		_isActive = false
+	}
+
+	/// The `Interactor` did become active.
+	///
+	/// - Note: This method is driven by the attachment of this interactor's owner router.
+	/// Subclasses should override this method to setup initial state.
+	@inline(__always)
+	@inlinable
+	open func didBecomeActive() {}
+
+	/// Called when the `Interactor` will resign the active sate.
+	///
+	/// This method is driven by the detachment of this `Interactors`'s owner router.
+	/// Subclasses should override this method to cleanup any resources and states of the `Interactor`.
+	/// The default implementation does nothing.
+	@inline(__always)
+	@inlinable
+	open func willResignActive() {}
 }

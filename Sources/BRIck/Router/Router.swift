@@ -1,26 +1,26 @@
 
 /// The base protocol for all routers.
 public protocol Routing: AnyObject {
-    /// The base interactable associated with this `Router`.
-    var interactable: Interactable { get }
+	/// The base interactable associated with this `Router`.
+	var interactable: Interactable { get }
 
-    /// The list of children routers of this `Router`.
-    var children: [Routing] { get }
+	/// The list of children routers of this `Router`.
+	var children: [Routing] { get }
 
-    /// Loads the `Router`.
-    ///
-    /// - Note: This method is internally used by framework. Application code should never invoke this method explicitly.
-    func load()
+	/// Loads the `Router`.
+	///
+	/// - Note: This method is internally used by framework. Application code should never invoke this method explicitly.
+	func load()
 
-    /// Attaches the given router as child.
-    ///
-    /// - Parameter child: The child router to attach.
-    func attach(_ child: Routing)
+	/// Attaches the given router as child.
+	///
+	/// - Parameter child: The child router to attach.
+	func attach(_ child: Routing)
 
-    /// Detaches the given router from the tree.
-    ///
-    /// - Parameter child: The child router to detach.
-    func detach(_ child: Routing)
+	/// Detaches the given router from the tree.
+	///
+	/// - Parameter child: The child router to detach.
+	func detach(_ child: Routing)
 }
 
 /// The base class of all routers that does not own view controllers, representing application states.
@@ -32,109 +32,109 @@ public protocol Routing: AnyObject {
 ///
 /// Routers should always use helper builders to instantiate children routers.
 open class Router<InteractorType>: Routing {
-    /// The corresponding `Interactor` owned by this `Router`.
-    private let interactor: InteractorType
+	/// The corresponding `Interactor` owned by this `Router`.
+	private let interactor: InteractorType
 
-    /// The base `Interactable` associated whit this `Router`.
-    public let interactable: Interactable
+	/// The base `Interactable` associated whit this `Router`.
+	public let interactable: Interactable
 
-    /// The list of children `Router`s of this `Router`.
-    public final var children: [Routing] = []
+	/// The list of children `Router`s of this `Router`.
+	public final var children: [Routing] = []
 
-    @usableFromInline
-    internal var didLoadFlag: Bool = false
+	@usableFromInline
+	internal var didLoadFlag: Bool = false
 
-    /// Initializer.
-    ///
-    /// - Parameter interactor: The corresponding `Interactor` of this `Router`.
-    public init(interactor: InteractorType) {
-        self.interactor = interactor
-        guard let interactable = interactor as? Interactable else {
-            fatalError("\(interactor) should conform to \(Interactable.self)")
-        }
+	/// Initializer.
+	///
+	/// - Parameter interactor: The corresponding `Interactor` of this `Router`.
+	public init(interactor: InteractorType) {
+		self.interactor = interactor
+		guard let interactable = interactor as? Interactable else {
+			fatalError("\(interactor) should conform to \(Interactable.self)")
+		}
 
-        self.interactable = interactable
-    }
+		self.interactable = interactable
+	}
 
-    deinit {
-        interactable.deactivate()
+	deinit {
+		interactable.deactivate()
 
-        children.forEach(detach(_:))
-    }
-    
-    /// Loads the `Router`.
-    ///
-    /// - Note: This method is internally used by the framework. Application code should never invoke this method explicitly.
-    @inline(__always)
-    @inlinable
-    public final func load() {
-        guard !didLoadFlag else {
-            return
-        }
+		children.forEach(detach(_:))
+	}
 
-        didLoadFlag = true
-        internalDidLoad()
-        didLoad()
-    }
-    
-    /// Attaches the given router as child.
-    ///
-    /// - Parameter child: The child router to attach.
-    @inline(__always)
-    @inlinable
-    public final func attach(_ child: Routing) {
-        assert(!(children.contains { $0 === child }),
-               "Attempt to attach child: \(child), which is already attached to \(self).")
+	/// Loads the `Router`.
+	///
+	/// - Note: This method is internally used by the framework. Application code should never invoke this method explicitly.
+	@inline(__always)
+	@inlinable
+	public final func load() {
+		guard !didLoadFlag else {
+			return
+		}
 
-        children.append(child)
+		didLoadFlag = true
+		internalDidLoad()
+		didLoad()
+	}
 
-        child.interactable.activate()
-        child.load()
-    }
+	/// Attaches the given router as child.
+	///
+	/// - Parameter child: The child router to attach.
+	@inline(__always)
+	@inlinable
+	public final func attach(_ child: Routing) {
+		assert(!(children.contains { $0 === child }),
+		       "Attempt to attach child: \(child), which is already attached to \(self).")
 
-    /// Detaches the given router from the tree.
-    ///
-    /// - Parameter child: The child router to detach.
-    @inline(__always)
-    @inlinable
-    public final func detach(_ child: Routing) {
-        child.interactable.deactivate()
+		children.append(child)
 
-        children.removeElementByReference(child)
-    }
-    
-    /// Called when the router has finished loading.
-     ///
-     /// This method is invoke only once. Subclasses should override this method to perform one time setup logic,
-     /// such as attaching immutable children. The default implementation does nothing.
-    @inline(__always)
-    @inlinable
-     open func didLoad() {}
-    
-    // MARK: - Internal Methods
-    
-    @usableFromInline
-    internal final func internalDidLoad() {
-        interactable.activityHandler = { [weak self] isActive in
-            guard let strongSelf = self else { return }
-            strongSelf.setSubtreeActive(isActive)
-        }
-    }
-    
-    // MARK: - Private Methods
-    
-    private func setSubtreeActive(_ active: Bool) {
-        switch active {
-        case true:
-            iterateSubtree(self) { router in router.interactable.activate() }
-        case false:
-            iterateSubtree(self) { router in router.interactable.deactivate() }
-        }
-    }
+		child.interactable.activate()
+		child.load()
+	}
 
-    private func iterateSubtree(_ root: Routing, closure: (_ node: Routing) -> Swift.Void) {
-        closure(root)
+	/// Detaches the given router from the tree.
+	///
+	/// - Parameter child: The child router to detach.
+	@inline(__always)
+	@inlinable
+	public final func detach(_ child: Routing) {
+		child.interactable.deactivate()
 
-        root.children.forEach { iterateSubtree($0, closure: closure) }
-    }
+		children.removeElementByReference(child)
+	}
+
+	/// Called when the router has finished loading.
+	///
+	/// This method is invoke only once. Subclasses should override this method to perform one time setup logic,
+	/// such as attaching immutable children. The default implementation does nothing.
+	@inline(__always)
+	@inlinable
+	open func didLoad() {}
+
+	// MARK: - Internal Methods
+
+	@usableFromInline
+	internal final func internalDidLoad() {
+		interactable.activityHandler = { [weak self] isActive in
+			guard let strongSelf = self else { return }
+			strongSelf.setSubtreeActive(isActive)
+		}
+	}
+
+	// MARK: - Private Methods
+
+	private func setSubtreeActive(_ active: Bool) {
+		switch active {
+		case true:
+			iterateSubtree(self) { router in router.interactable.activate() }
+		case false:
+			iterateSubtree(self) { router in router.interactable.deactivate() }
+		}
+	}
+
+	private func iterateSubtree(_ root: Routing, closure: (_ node: Routing) -> Swift.Void) {
+		closure(root)
+
+		root.children.forEach { iterateSubtree($0, closure: closure) }
+	}
 }
