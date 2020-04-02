@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'BRI'
-  s.version      = '2.0.0'
+  s.version      = '2.0.1'
   s.summary      = 'BRIck is mobile architecture.'
 
   s.description  = <<-DESC
