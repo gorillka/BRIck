@@ -33,7 +33,7 @@ public protocol Routing: AnyObject {
 /// Routers should always use helper builders to instantiate children routers.
 open class Router<InteractorType>: Routing {
 	/// The corresponding `Interactor` owned by this `Router`.
-	private let interactor: InteractorType
+	public let interactor: InteractorType
 
 	/// The base `Interactable` associated whit this `Router`.
 	public let interactable: Interactable
