@@ -1,7 +1,8 @@
 // ___FILEHEADER___
 
-import UIKit
 import BRIck
+import Combine
+import UIKit
 
 protocol ___VARIABLE_productName___PresentableListener: class {
 

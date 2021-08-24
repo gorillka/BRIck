@@ -1,6 +1,7 @@
 // ___FILEHEADER___
 
 import BRIck
+import Combine
 
 protocol ___VARIABLE_productName___Routing: ViewableRouting {
 

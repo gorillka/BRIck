@@ -1,5 +1,5 @@
 //
-// Copyright © 2020. Orynko Artem
+// Copyright © 2021. Orynko Artem
 //
 // MIT license, see LICENSE file for details
 //
