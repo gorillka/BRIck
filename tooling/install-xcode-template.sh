@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
 # Configuration
-XCODE_TEMPLATE_DIR=$HOME'/Library/Developer/Xcode/Templates/File Templates/BRIcks'
+XCODE_TEMPLATE_DIR=$HOME'/Library/Developer/Xcode/Templates/File Templates/BRIck'
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Copy BRIcks file templates into the local BRIcks template directory
 xcodeTemplate () {
-  echo "==> Copying up BRIcks Xcode file templates..."
+  echo "==> Copying up BRIck Xcode file templates..."
 
   if [ -d "$XCODE_TEMPLATE_DIR" ]; then
     rm -R "$XCODE_TEMPLATE_DIR"
@@ -21,4 +21,4 @@ xcodeTemplate () {
 xcodeTemplate
 
 echo "==> ... success!"
-echo "==> BRICKs have been set up. In Xcode, select 'New File...' to use BRIcks templates."
+echo "==> BRIck have been set up. In Xcode, select 'New File...' to use BRIck templates."

@@ -13,14 +13,24 @@ protocol ___VARIABLE_productName___Listener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other BRIcks.
 }
 
+// MARK: - Interactor
+
 final class ___VARIABLE_productName___Interactor: Interactor {
 
+    // MARK: Public Properties
+    
     weak var router: ___VARIABLE_productName___Routing?
     weak var listener: ___VARIABLE_productName___Listener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
+    // MARK: Private Properties
+    
+    // MARK: Inits
 
-    override init() {}
+    override init() {
+        // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
+    }
+    
+    // MARK: Override Methods
 
     override func didBecomeActive() {
         super.didBecomeActive()
@@ -33,6 +43,12 @@ final class ___VARIABLE_productName___Interactor: Interactor {
 
         // TODO: Pause any business logic.
     }
+    
+    // MARK: Public Methods
+    
+    // MARK: Private Methods
 }
+
+// MARK: - ___VARIABLE_productName___Interactable
 
 extension ___VARIABLE_productName___Interactor:  ___VARIABLE_productName___Interactable {}

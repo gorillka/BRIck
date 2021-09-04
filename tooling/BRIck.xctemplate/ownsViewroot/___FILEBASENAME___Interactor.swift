@@ -1,6 +1,7 @@
 // ___FILEHEADER___
 
 import BRIck
+import Combine
 
 protocol ___VARIABLE_productName___Routing: LaunchRouting {
 
@@ -20,15 +21,22 @@ protocol ___VARIABLE_productName___Listener: AnyObject {
 
 final class ___VARIABLE_productName___Interactor: PresentableInteractor<___VARIABLE_productName___Presentable> {
 
+    // MARK: Public Properties
+    
     weak var router: ___VARIABLE_productName___Routing?
     weak var listener: ___VARIABLE_productName___Listener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
+    // MARK: Private Properties
+    
+    // MARK: Inits
 
     override init(presenter: ___VARIABLE_productName___Presentable) {
+        // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
         super.init(presenter: presenter)
         presenter.listener = self
     }
+    
+    // MARK: Override Methods
 
     override func didBecomeActive() {
         super.didBecomeActive()
@@ -41,8 +49,16 @@ final class ___VARIABLE_productName___Interactor: PresentableInteractor<___VARIA
 
         // TODO: Pause any business logic.
     }
+    
+    // MARK: Public Methods
+    
+    // MARK: Private Methods
 }
 
+// MARK: - ___VARIABLE_productName___PresentableListener
+
 extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___PresentableListener {}
+
+// MARK: - ___VARIABLE_productName___Interactable
 
 extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___Interactable {}
