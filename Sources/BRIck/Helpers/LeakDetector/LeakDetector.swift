@@ -48,7 +48,7 @@ public class LeakDetector {
 
     // MARK: - Public Properties
 
-    public var logger: Logger?
+    public var logger: Logger = Logger(label: "BRIck.leakDetector")
 
     /// The status of leak detection.
     ///
@@ -68,7 +68,7 @@ public class LeakDetector {
             .environment["DISABLE_LEAK_DETECTION"]
 
         if let flag = environmentValue?.lowercased() {
-            return flag == "true" || flag == "yes"
+            return flag == "true" || flag == "yes" || flag == "1"
         }
 
         return LeakDetector.disableLeakDetectorOverride
@@ -124,12 +124,12 @@ public class LeakDetector {
 
             if self.disableLeakDetector {
                 if !didDeallocate {
-                    self.logger?.debug("Leak detection is disabled. This should only be used for debugging purposes.")
-                    self.logger?.debug(.init(stringLiteral: message))
+                    self.logger.debug("Leak detection is disabled. This should only be used for debugging purposes.")
+                    self.logger.debug(.init(stringLiteral: message))
                 }
             } else {
                 if didDeallocate {
-                    self.logger?.critical(.init(stringLiteral: message))
+                    self.logger.critical(.init(stringLiteral: message))
                 }
                 assert(didDeallocate, message)
             }
@@ -166,11 +166,11 @@ public class LeakDetector {
                 "\(viewController) appearance has leaked. Either its parent router who does not own a view controller was detached, but failed to dismiss the leaked view controller; or the view controller is reused and re-added to window, yet the router is not re-attached but re-created. Objects are expected to be deallocated at this time: \(self.trackingObjects)"
 
             if self.disableLeakDetector {
-                self.logger?.debug("Leak detection is disabled. This should only be used for debugging purposes.")
-                self.logger?.debug(.init(stringLiteral: message))
+                self.logger.debug("Leak detection is disabled. This should only be used for debugging purposes.")
+                self.logger.debug(.init(stringLiteral: message))
             } else {
                 if viewDidDisappear {
-                    self.logger?.critical(.init(stringLiteral: message))
+                    self.logger.critical(.init(stringLiteral: message))
                 }
                 assert(viewDidDisappear, message)
             }

@@ -8,7 +8,6 @@ import Combine
 
 /// Protocol defining the activeness of an interactor's scope.
 public protocol InteractorScope: AnyObject {
-    typealias ActivityHandler = (Bool) -> Swift.Void
 
     /// The lifecycle handler of this interactor.
     var isActive: Bool { get }
