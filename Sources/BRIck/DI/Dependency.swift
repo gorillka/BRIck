@@ -1,3 +1,8 @@
+//
+// Copyright © 2021. Orynko Artem
+//
+// MIT license, see LICENSE file for details
+//
 
 /// The base dependency protocol.
 ///

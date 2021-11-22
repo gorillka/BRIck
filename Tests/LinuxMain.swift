@@ -6,8 +6,14 @@
 
 import XCTest
 
-import BRIckTests
+#if os(Linux) || os(FreeBSD)
+@testable import BRIckTests
 
 var tests = [XCTestCaseEntry]()
 tests += BRIckTests.allTests()
+tests += WorkerTests.allTests()
+tests += WorkflowTest.allTests()
+tests += ComponentTests.allTests()
+tests += RouterTests.allTests()
+tests += LaunchRouterTests.allTests()
 XCTMain(tests)

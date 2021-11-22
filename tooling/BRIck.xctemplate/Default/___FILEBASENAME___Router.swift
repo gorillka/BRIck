@@ -7,14 +7,30 @@ protocol ___VARIABLE_productName___Interactable: Interactable {
     var listener: ___VARIABLE_productName___Listener? { get set }
 }
 
-final class ___VARIABLE_productName___Router: Router<___VARIABLE_productName___Interactable> {
+// MARK: - Router
 
-    // TODO: Constructor inject child builder protocols to allow building children.
-    
+final class ___VARIABLE_productName___Router: Router<___VARIABLE_productName___Interactable> {
+    // MARK: Private Properties
+
+    // MARK: Public Properties
+
+    // MARK: Inits
+
     override init(interactor: ___VARIABLE_productName___Interactable) {
+        // TODO: Constructor inject child builder protocols to allow building children.
+        
         super.init(interactor: interactor)
+        
         interactor.router = self
     }
+
+    // MARK: Override Methods
+
+    // MARK: Public Methods
+
+    // MARK: Private Methods
 }
+
+// MARK: - ___VARIABLE_productName___Routing
 
 extension ___VARIABLE_productName___Router: ___VARIABLE_productName___Routing {}

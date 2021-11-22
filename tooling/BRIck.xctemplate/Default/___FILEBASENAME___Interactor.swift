@@ -1,29 +1,37 @@
 // ___FILEHEADER___
 
 import BRIck
+import Combine
 
 protocol ___VARIABLE_productName___Routing: Routing {
-
     // TODO: Declare methods the interactor can invoke to manage sub-tree view the router.
 }
 
-protocol ___VARIABLE_productName___Listener: class {
-
+protocol ___VARIABLE_productName___Listener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other BRIcks.
 }
 
+// MARK: - Interactor
+
 final class ___VARIABLE_productName___Interactor: Interactor {
+    // MARK: Public Properties
 
     weak var router: ___VARIABLE_productName___Routing?
     weak var listener: ___VARIABLE_productName___Listener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
+    // MARK: Private Properties
 
-    override init() {}
+    // MARK: Inits
+
+    override init() {
+        // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
+    }
+
+    // MARK: Override Methods
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        
+
         // TODO: Implement business logic here.
     }
 
@@ -32,6 +40,12 @@ final class ___VARIABLE_productName___Interactor: Interactor {
 
         // TODO: Pause any business logic.
     }
+
+    // MARK: Public Methods
+
+    // MARK: Private Methods
 }
 
-extension ___VARIABLE_productName___Interactor:  ___VARIABLE_productName___Interactable {}
+// MARK: - ___VARIABLE_productName___Interactable
+
+extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___Interactable {}
