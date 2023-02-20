@@ -14,6 +14,7 @@ public struct ___VARIABLE_productName___View: View {
     // MARK: Private Properties
 
     @ObservedObject private var viewModel: ___VARIABLE_productName___Presenter
+    
     // MARK: Inits
 
     init(_ viewModel: ___VARIABLE_productName___Presenter) {
