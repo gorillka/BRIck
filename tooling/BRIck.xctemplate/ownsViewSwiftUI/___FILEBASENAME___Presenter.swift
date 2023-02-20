@@ -11,7 +11,7 @@ protocol ___VARIABLE_productName___PresentableListener: AnyObject {
     func onDisappear()
 }
 
-final class ___VARIABLE_productName___Presenter: ___VARIABLE_productName___ViewControllable {
+final class ___VARIABLE_productName___Presenter {
     // MARK: Public Properties
 
     weak var listener: ___VARIABLE_productName___PresentableListener?
@@ -26,6 +26,10 @@ final class ___VARIABLE_productName___Presenter: ___VARIABLE_productName___ViewC
 
     // MARK: Private Methods
 }
+
+// MARK: - ___VARIABLE_productName___ViewControllable
+
+extension ___VARIABLE_productName___Presenter: ___VARIABLE_productName___ViewControllable {}
 
 // MARK: - ___VARIABLE_productName___Presentable
 

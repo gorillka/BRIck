@@ -33,9 +33,9 @@ final class ___VARIABLE_productName___Interactor: PresentableInteractor<___VARIA
         presenter: ___VARIABLE_productName___Presentable
     ) {
         // TODO: Add additional dependencies to constructor. Do not perform any logic in constructor.
-        
+
         super.init(presenter: presenter)
-        
+
         presenter.listener = self
     }
 
@@ -65,6 +65,6 @@ extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___Intera
 // MARK: - ___VARIABLE_productName___PresentableListener
 
 extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___PresentableListener {
-    final func onAppear() {}
-    final func onDisappear() {}
+    func onAppear() {}
+    func onDisappear() {}
 }
