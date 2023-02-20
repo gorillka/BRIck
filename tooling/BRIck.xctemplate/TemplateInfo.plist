@@ -20,9 +20,7 @@
 	<key>MainTemplateFiles</key>
 	<string>___FILEBASENAME___.swift</string>
 	<key>Platforms</key>
-	<array>
-		<string>com.apple.platform.iphones</string>
-	</array>
+	<array/>
 	<key>Options</key>
 	<array>
 		<dict>
