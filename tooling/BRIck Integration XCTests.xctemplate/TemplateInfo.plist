@@ -5,9 +5,9 @@
 	<key>Kind</key>
 	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
 	<key>Summary</key>
-	<string>BRIck Unit Tests using Swift Testing</string>
+	<string>BRIck Integration XCTests</string>
 	<key>Description</key>
-	<string>BRIck unit test files.</string>
+	<string>BRIck integration XCTest files.</string>
 	<key>SortOrder</key>
 	<string>2</string>
 	<key>AllowedTypes</key>
@@ -16,7 +16,7 @@
 		<string>public.swift-source</string>
 	</dict>
 	<key>DefaultCompletionName</key>
-	<string>BRIck Unit Tests</string>
+	<string>BRIck Integration XCTests</string>
 	<key>MainTemplateFiles</key>
 	<string>___FILEBASENAME___.swift</string>
 	<key>Platforms</key>
@@ -31,7 +31,7 @@
 			<key>Name</key>
 			<string>Name of the BRIck to test:</string>
 			<key>Description</key>
-			<string>The name of the BRIck to unit test for. Creates an interactor and a router test.</string>
+			<string>The name of the BRIck to create integration test for.</string>
 			<key>Type</key>
 			<string>text</string>
 			<key>NotPersisted</key>

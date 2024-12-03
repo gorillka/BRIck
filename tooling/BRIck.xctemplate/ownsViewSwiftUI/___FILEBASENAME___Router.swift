@@ -2,9 +2,10 @@
 
 import BRIck
 import BRIck_SwiftUI
+import SwiftUI
 
 protocol ___VARIABLE_productName___Interactable: Interactable {
-    var router: ___VARIABLE_productName___Routing? { get set }
+    var router: (any ___VARIABLE_productName___Routing)? { get set }
     var listener: ___VARIABLE_productName___Listener? { get set }
 }
 
@@ -12,7 +13,7 @@ protocol ___VARIABLE_productName___ViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 
-final class ___VARIABLE_productName___Router<ViewControllableType>: ViewableRouter<___VARIABLE_productName___Interactable, ViewControllableType, ___VARIABLE_productName___View> where ViewControllableType: ___VARIABLE_productName___ViewControllable {
+final class ___VARIABLE_productName___Router<ViewControllableType, Content>: ViewableRouter<___VARIABLE_productName___Interactable, ViewControllableType, Content> where ViewControllableType: ___VARIABLE_productName___ViewControllable, Content: View {
     // MARK: Public Properties
 
     // MARK: Private Properties
@@ -22,7 +23,7 @@ final class ___VARIABLE_productName___Router<ViewControllableType>: ViewableRout
     override init(
         interactor: ___VARIABLE_productName___Interactable,
         viewControllable: ViewControllableType,
-        view: ___VARIABLE_productName___View
+        view: Content
     ) {
         // TODO: Constructor inject child builder protocols to allow building children.
         

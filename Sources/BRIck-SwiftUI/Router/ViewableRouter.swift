@@ -9,6 +9,8 @@ import SwiftUI
 
 /// The base protocol for all routers that own their own view.
 public protocol ViewableRouting: Routing {
+    associatedtype Content: View
+    
     func eraseToScreen() -> Screen
 }
 

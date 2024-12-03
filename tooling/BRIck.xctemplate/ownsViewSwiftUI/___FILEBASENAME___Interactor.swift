@@ -6,7 +6,7 @@ import Combine
 
 protocol ___VARIABLE_productName___Routing: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree view the router.
-    var view: LazyView<___VARIABLE_productName___View> { get }
+    var view: LazyView<Content> { get }
 }
 
 protocol ___VARIABLE_productName___Presentable: Presentable {
@@ -22,7 +22,7 @@ protocol ___VARIABLE_productName___Listener: AnyObject {
 final class ___VARIABLE_productName___Interactor: PresentableInteractor<___VARIABLE_productName___Presentable> {
     // MARK: Public Properties
 
-    weak var router: ___VARIABLE_productName___Routing?
+    weak var router: (any ___VARIABLE_productName___Routing)?
     weak var listener: ___VARIABLE_productName___Listener?
 
     // MARK: Private Properties

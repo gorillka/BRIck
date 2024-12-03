@@ -17,7 +17,7 @@ public struct ___VARIABLE_productName___View: View {
 
     // MARK: Private Properties
 
-    @ObservedObject private var viewModel: ___VARIABLE_productName___ViewModel
+    @ObservedObject private var viewModel: ___VARIABLE_productName___Presenter
 
     // MARK: Inits
 
@@ -33,7 +33,7 @@ public struct ___VARIABLE_productName___View: View {
 #if DEBUG
     struct ___VARIABLE_productName___View_Preview: PreviewProvider {
         static var previews: some View {
-            ___VARIABLE_productName___View(___VARIABLE_productName___ViewModel())
+            ___VARIABLE_productName___View(___VARIABLE_productName___Presenter())
         }
     }
 #endif
