@@ -31,7 +31,7 @@
 			<key>Name</key>
 			<string>Name of the BRIck to test:</string>
 			<key>Description</key>
-			<string>The name of the BRIck to unit test for. Creates an interactor and a router test.</string>
+			<string>The name of the BRIck to create unit test for.</string>
 			<key>Type</key>
 			<string>text</string>
 			<key>NotPersisted</key>

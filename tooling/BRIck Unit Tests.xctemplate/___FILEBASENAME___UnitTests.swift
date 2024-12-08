@@ -2,9 +2,9 @@
 
 @testable import ___PROJECTNAME___
 import SwiftUI
-import XCTest
+import Testing
 
-final class ___VARIABLE_productName___IntegrationTests: XCTest {
+final class ___VARIABLE_productName___UnitTests {
     // MARK: Private properties
 
     private var interactor: ___VARIABLE_productName___Interactor!
@@ -15,9 +15,7 @@ final class ___VARIABLE_productName___IntegrationTests: XCTest {
 
     // MARK: Lifecycle
 
-    override func setUp()  {
-        super.setUp()
-
+    init() {
         let presenter = ___VARIABLE_productName___Presenter()
         let view = EmptyView()
         let interactor = ___VARIABLE_productName___Interactor(presenter: presenter)
@@ -33,9 +31,7 @@ final class ___VARIABLE_productName___IntegrationTests: XCTest {
         self.router = router
     }
 
-    override func tearDown()  {
-        super.tearDown()
-
+    deinit {
         interactor = nil
         presenter = nil
         router = nil
