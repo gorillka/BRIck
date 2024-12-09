@@ -13,7 +13,7 @@ final class ___VARIABLE_productName___Component: Component<___VARIABLE_productNa
 // MARK: - Builder
 
 protocol ___VARIABLE_productName___Buildable: Buildable {
-    func build(withListener: ___VARIABLE_productName___Listener) -> ___VARIABLE_productName___Routing
+    func build(withListener: ___VARIABLE_productName___Listener) -> any ___VARIABLE_productName___Routing
 }
 
 final class ___VARIABLE_productName___Builder: Builder<___VARIABLE_productName___Dependency> {
@@ -37,7 +37,7 @@ final class ___VARIABLE_productName___Builder: Builder<___VARIABLE_productName__
 // MARK: - ___VARIABLE_productName___Buildable
 
 extension ___VARIABLE_productName___Builder: ___VARIABLE_productName___Buildable {
-    func build(withListener listener: ___VARIABLE_productName___Listener) -> ___VARIABLE_productName___Routing {
+    func build(withListener listener: ___VARIABLE_productName___Listener) -> any ___VARIABLE_productName___Routing {
         let component = ___VARIABLE_productName___Component(dependency: dependency)
         let presenter = ___VARIABLE_productName___Presenter()
         let view = ___VARIABLE_productName___View(presenter)
