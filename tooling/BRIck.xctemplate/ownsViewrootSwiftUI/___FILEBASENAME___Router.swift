@@ -2,6 +2,7 @@
 
 import BRIck
 import BRIck_SwiftUI
+import SwiftUI
 
 protocol ___VARIABLE_productName___Interactable: Interactable {
     var router: (any ___VARIABLE_productName___Routing)? { get set }
@@ -12,7 +13,7 @@ protocol ___VARIABLE_productName___ViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 
-final class ___VARIABLE_productName___Router<ViewControllableType, Content>: LaunchRouter<___VARIABLE_productName___Interactable, ViewControllableType, ___VARIABLE_productName___View> where ViewControllableType: ___VARIABLE_productName___ViewControllable, Content: View {
+final class ___VARIABLE_productName___Router<ViewControllableType, Content>: LaunchRouter<___VARIABLE_productName___Interactable, ViewControllableType, Content> where ViewControllableType: ___VARIABLE_productName___ViewControllable, Content: View {
     // MARK: Public Properties
 
     // MARK: Private Properties
